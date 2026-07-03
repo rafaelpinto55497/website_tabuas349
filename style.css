@@ -1,62 +1,226 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f7f7f7;
-  color: #333;
+/* ============================
+   VARIÁVEIS DE COR E BASE
+   ============================ */
+:root {
+  --cor-principal: #8b0000;
+  --cor-secundaria: #f7f7f7;
+  --cor-texto: #333;
+  --cor-branco: #fff;
 }
 
-header {
-  background: #8b0000;
-  color: white;
-  padding: 20px;
-  text-align: center;
+/* ============================
+   RESET E BASE
+   ============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--cor-secundaria);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+/* ============================
+   NAVEGAÇÃO SUPERIOR
+   ============================ */
+.topo {
+  position: sticky;
+  top: 0;
+  background: #ffffffee;
+  backdrop-filter: blur(6px);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--cor-principal);
 }
 
 nav a {
-  color: white;
-  margin: 0 15px;
+  margin: 0 12px;
   text-decoration: none;
-  font-weight: bold;
+  color: var(--cor-texto);
+  font-weight: 600;
 }
 
+nav a:hover {
+  color: var(--cor-principal);
+}
+
+/* ============================
+   SECÇÕES GERAIS
+   ============================ */
 .secao {
-  padding: 40px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
+.secao-alt {
+  background: var(--cor-branco);
+}
+
+/* ============================
+   HERO (BANNER INICIAL)
+   ============================ */
+.hero {
+  background: url("img/tabua1.jpg") center/cover no-repeat;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  color: var(--cor-branco);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero-texto {
+  position: relative;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* ============================
+   BOTÕES
+   ============================ */
+.botao {
+  display: inline-block;
+  background: var(--cor-principal);
+  color: var(--cor-branco);
+  padding: 12px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.botao:hover {
+  background: #a80000;
+}
+
+/* ============================
+   GRID DE PRODUTOS
+   ============================ */
 .grid {
   display: flex;
-  gap: 30px;
   flex-wrap: wrap;
+  gap: 30px;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .card {
-  background: white;
-  width: 260px;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+  background: var(--cor-branco);
+  width: 280px;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .card img {
   width: 100%;
-  height: auto;
   border-radius: 10px;
-  display: block;
+  margin-bottom: 12px;
 }
 
+.preco {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--cor-principal);
+}
+
+/* ============================
+   SECÇÃO FUNDADORA
+   ============================ */
+.fundadora-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.fundadora-foto {
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+}
+
+.fundadora-texto {
+  max-width: 500px;
+  text-align: left;
+}
+
+.fundadora-texto h3 {
+  color: var(--cor-principal);
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+
+/* ============================
+   FOOTER
+   ============================ */
 footer {
-  background: #8b0000;
-  color: white;
+  background: var(--cor-principal);
+  color: var(--cor-branco);
   text-align: center;
-  padding: 15px;
+  padding: 20px;
   margin-top: 40px;
 }
 
+/* ============================
+   RESPONSIVO
+   ============================ */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 50vh;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 340px;
+  }
+
+  .fundadora-texto {
+    text-align: center;
+  }
+}
