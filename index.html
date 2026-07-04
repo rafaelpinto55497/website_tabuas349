@@ -6,6 +6,36 @@
   <title>Tábuas 349 Enchidos </title>
   <link rel="stylesheet" href="style.css">
 </head>
+<!-- Botão WhatsApp Flutuante -->
+<a href="https://wa.me/351912345678" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+       alt="WhatsApp" />
+</a>
+
+<style>
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: transform 0.2s ease;
+}
+.whatsapp-float img {
+  width: 32px;
+  height: 32px;
+}
+.whatsapp-float:hover {
+  transform: scale(1.12);
+}
+</style>
 
 <body>
   <header>
@@ -104,24 +134,3 @@
     </div>
   </div>
 </section>
-<!-- Botão WhatsApp -->
-<a href="https://wa.me/351912345678" target="_blank" class="whatsapp-button">
-  Falar no WhatsApp
-</a>
-
-<style>
-.whatsapp-button {
-  display: inline-block;
-  background-color: #25D366;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-size: 18px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-.whatsapp-button:hover {
-  background-color: #1ebe5d;
-}
-</style>
