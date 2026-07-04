@@ -29,7 +29,7 @@ body {
    NAVEGAÇÃO SUPERIOR
    ============================ */
 .topo {
-  position: sticky;
+  position: center;
   top: 0;
   background: #ffffffee;
   backdrop-filter: blur(6px);
